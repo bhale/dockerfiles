@@ -1,0 +1,4 @@
+neww -v 'bash'
+split-window -v 'bash'
+split-window -h 'bash'
+new-window 'openconnect --juniper https://sslvpn.sevone.com'
