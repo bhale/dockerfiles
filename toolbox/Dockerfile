@@ -1,8 +1,6 @@
-FROM vimagick/openconnect
-RUN apk update && apk add py2-pip bash htop vim tmux docker curl openssh-client rsync && apk upgrade
-RUN pip install docker-compose
+FROM fedora:25
+RUN yum update -y && yum install -y docker docker-compose htop tmux mytop vim golang
 COPY tmux.conf /root/.tmux.conf
-COPY session1 /root
 COPY bashrc /root/.bashrc
-RUN sed -i /etc/passwd -e s/ash/bash/g
-ENTRYPOINT tmux new-session "tmux source-file ~/session1"
+ENV DOCKER_HOST=unix:///host/var/run/docker.sock
+CMD bash

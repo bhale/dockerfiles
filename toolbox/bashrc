@@ -1,2 +1,1 @@
 PS1="\[\033[01;31m\]\u@toolbox\[\033[01;34m\] \w $\[\033[00m\] "
-alias vpn="openconnect --juniper https://sslvpn.sevone.com"
